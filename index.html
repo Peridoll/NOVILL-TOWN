@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ja" data-theme="dark" data-font="standard">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0d1724">
+  <meta name="description" content="NOVILL TOWN EMS。街の安心を支える医療組織のご案内、活動方針、隊務規定、研修・勤務案内。">
+  <title>NOVILL EMS | Medical Services &amp; Guidelines</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <!-- Inline symbols keep the navigation usable when this page is embedded in FiveM NUI. -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="svg-symbols" aria-hidden="true" focusable="false">
+    <symbol id="i-kit" viewBox="0 0 48 48">
+      <path d="M16 12V9c0-2 1.5-3 3.5-3h9C30.5 6 32 7 32 9v3"/>
+      <rect x="6" y="13" width="36" height="28" rx="6"/>
+      <path d="M6 23h36"/><path d="M24 19v12M18 25h12"/>
+    </symbol>
+    <symbol id="i-stethoscope" viewBox="0 0 48 48">
+      <path d="M11 8v11c0 8 5 13 13 13 6 0 11-4 11-10v-3"/>
+      <path d="M7 8v6a4 4 0 0 0 8 0V8"/><path d="M17 8v6a4 4 0 0 0 8 0V8" transform="translate(-10 0)" opacity="0"/>
+      <path d="M19 8v6a4 4 0 0 1-8 0V8"/><circle cx="35" cy="18" r="5"/><circle cx="24" cy="36" r="4"/>
+    </symbol>
+    <symbol id="i-bandage" viewBox="0 0 48 48">
+      <rect x="5" y="16" width="38" height="16" rx="8" transform="rotate(-30 24 24)"/>
+      <path d="M19 18l10 16M15 24l10 16" opacity=".6"/>
+      <path d="M22 22h.1M26 20h.1M25 27h.1M29 25h.1" stroke-width="3.2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-cold" viewBox="0 0 48 48">
+      <rect x="8" y="7" width="32" height="34" rx="8"/><path d="M15 12h18M16 36h16" opacity=".55"/>
+      <path d="M24 17v14M18 20l12 8M18 28l12-8"/><path d="M21 19l3-2 3 2M21 29l3 2 3-2"/>
+    </symbol>
+    <symbol id="i-forceps" viewBox="0 0 48 48">
+      <path d="M13 8l11 20L35 8M24 28l-9 12M24 28l9 12"/><path d="M10 6l6 5M38 6l-6 5"/>
+      <circle cx="14" cy="9" r="4"/><circle cx="34" cy="9" r="4"/>
+    </symbol>
+    <symbol id="i-defib" viewBox="0 0 48 48">
+      <rect x="6" y="8" width="36" height="32" rx="5"/><path d="M12 16h11l-5 9h7l-4 9"/>
+      <path d="M30 17h6M30 23h6M30 29h6"/><path d="M12 40v3M36 40v3"/>
+    </symbol>
+    <symbol id="i-splint" viewBox="0 0 48 48">
+      <rect x="15" y="5" width="18" height="38" rx="5" transform="rotate(22 24 24)"/>
+      <path d="M18 15l13 5M15 24l13 5M12 33l13 5"/>
+    </symbol>
+    <symbol id="i-suture" viewBox="0 0 48 48">
+      <path d="M7 15c10 0 10 17 20 17 7 0 9-7 13-7"/><path d="M32 9c5 7 7 10 8 16"/>
+      <path d="M12 11l-5 8M18 15l-5 8M24 19l-5 8"/><path d="M37 8l4 2"/>
+    </symbol>
+    <symbol id="i-clipboard" viewBox="0 0 48 48">
+      <path d="M16 10H9v31h30V10h-7"/><rect x="16" y="5" width="16" height="10" rx="3"/>
+      <path d="M15 24h18M15 31h18"/>
+    </symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-7-7 7 7-7 7"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main-content">本文へスキップ</a>
+  <div class="read-progress" aria-hidden="true"><span id="readProgress"></span></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <div class="nav-assembly">
+        <button class="kit-toggle" type="button" id="kitToggle" aria-label="医療キットメニューを開く" aria-controls="kitNav" aria-expanded="false" title="メニューを開く">
+          <svg class="kit-svg icon-stroke" aria-hidden="true" viewBox="0 0 48 48">
+            <path class="kit-handle" d="M16 13V9c0-2 2-3 4-3h8c2 0 4 1 4 3v4"/>
+            <path class="kit-case" d="M7 23v12c0 3 2 5 5 5h24c3 0 5-2 5-5V23"/>
+            <path class="kit-lid" d="M7 23v-5c0-3 2-5 5-5h24c3 0 5 2 5 5v5H7Z"/>
+            <path class="kit-cross" d="M24 17v15M17 24.5h14"/>
+          </svg>
+          <span class="kit-dot" aria-hidden="true"></span>
+        </button>
+        <nav class="kit-nav" id="kitNav" aria-label="ページ内ナビゲーション" aria-hidden="true" inert>
+          <a class="tool-link" href="#about" data-section="about" data-label="EMSとは" title="EMSとは｜聴診器" aria-label="EMSとは"><svg class="icon-stroke"><use href="#i-stethoscope"></use></svg><span class="tool-label">EMSとは</span></a>
+          <a class="tool-link" href="#principles" data-section="principles" data-label="基本方針" title="基本方針｜包帯" aria-label="基本方針"><svg class="icon-stroke"><use href="#i-bandage"></use></svg><span class="tool-label">基本方針</span></a>
+          <a class="tool-link" href="#mindset" data-section="mindset" data-label="心構え" title="心構え｜冷却パック" aria-label="心構え"><svg class="icon-stroke"><use href="#i-cold"></use></svg><span class="tool-label">心構え</span></a>
+          <a class="tool-link" href="#prohibited" data-section="prohibited" data-label="禁止事項" title="禁止事項｜鉗子" aria-label="禁止事項"><svg class="icon-stroke"><use href="#i-forceps"></use></svg><span class="tool-label">禁止事項</span></a>
+          <a class="tool-link" href="#rules" data-section="rules" data-label="隊務規定" title="隊務規定｜除細動器" aria-label="隊務規定"><svg class="icon-stroke"><use href="#i-defib"></use></svg><span class="tool-label">隊務規定</span></a>
+          <a class="tool-link" href="#operations" data-section="operations" data-label="勤務と装備" title="勤務と装備｜副木" aria-label="勤務と装備"><svg class="icon-stroke"><use href="#i-splint"></use></svg><span class="tool-label">勤務と装備</span></a>
+          <a class="tool-link" href="#training" data-section="training" data-label="研修" title="研修｜縫合キット" aria-label="研修"><svg class="icon-stroke"><use href="#i-suture"></use></svg><span class="tool-label">研修</span></a>
+          <a class="tool-link" href="#updates" data-section="updates" data-label="更新履歴" title="更新履歴｜カルテ" aria-label="更新履歴"><svg class="icon-stroke"><use href="#i-clipboard"></use></svg><span class="tool-label">更新履歴</span></a>
+        </nav>
+      </div>
+      <a class="head-brand" href="#top" aria-label="NOVILL EMS ホームへ"><img src="assets/novill-ems-mark.svg" alt="" width="38" height="38"><span><strong>NOVILL <b>EMS</b></strong><small>MEDICAL SERVICES</small></span></a>
+      <div class="header-actions">
+        <button class="utility-button search-trigger" type="button" id="searchButton" aria-label="ページ内を検索" title="ページ内を検索"><svg class="icon-stroke"><use href="#i-search"></use></svg></button>
+        <div class="size-switch" role="group" aria-label="本文の文字サイズ">
+          <button type="button" data-font-option="small" aria-label="文字サイズ 小">A<span>−</span></button>
+          <button type="button" data-font-option="standard" aria-label="文字サイズ 標準" class="selected">A</button>
+          <button type="button" data-font-option="large" aria-label="文字サイズ 大">A<span>＋</span></button>
+        </div>
+        <button class="utility-button theme-toggle" type="button" id="themeToggle" aria-label="ライトモードに切り替え" title="テーマ切り替え">
+          <svg class="icon-stroke theme-sun"><use href="#i-sun"></use></svg><svg class="icon-stroke theme-moon"><use href="#i-moon"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-grid"></div>
+        <div class="hero-halo"></div>
+        <div class="hero-ghost hero-depth-far">EMSとは</div>
+        <div class="hero-ghost-en hero-depth-far">LIFE SUPPORT</div>
+        <svg class="hero-pulse hero-depth-mid" viewBox="0 0 1200 190" preserveAspectRatio="none"><path d="M0 111H219l36-1 34-45 29 97 40-142 42 141 40-49h760"/></svg>
+        <svg class="skyline hero-depth-mid" viewBox="0 0 1440 410" preserveAspectRatio="none"><path d="M0 410V288h90v-70h36v70h64v-123h46v-51h24v51h46v123h58V236h56v-72h42v72h74V120h55v-40h27v40h45v168h65v-98h36v-28h36v28h40v98h64V155h54V90h27v65h36v133h57v-74h56v74h65v-124h34v-58h19v58h41v124h64V207h73v81h82v122Z"/></svg>
+      </div>
+      <div class="container hero-layout">
+        <div class="hero-primary">
+          <div class="overline"><span class="signal-dot"></span> NOVILL TOWN / EMERGENCY MEDICAL SERVICES</div>
+          <div class="hero-wordmark"><img src="assets/novill-ems-mark.svg" alt="" width="76" height="76"><div class="hero-wordmark-text">NOVILL TOWN <span>EMS</span></div></div>
+          <h1 class="hero-subtitle" id="heroTitle">あなたの街に、いつでも帰れる場所を。</h1>
+          <p class="hero-description">命を支え、日常を守り、人と人をつなぐ。<br>私たちは、NOVILL TOWNの医療を担う組織です。</p>
+          <a class="hero-cta" href="#rules"><span class="cta-icon"><svg class="icon-stroke"><use href="#i-clipboard"></use></svg></span><span class="cta-text"><strong>隊務規定</strong><small>EMSルールを開く</small></span><span class="cta-arrow" aria-hidden="true"><svg class="icon-stroke"><use href="#i-arrow"></use></svg></span></a>
+          <a class="hero-secondary" href="#about">EMSについて知る <svg class="icon-stroke"><use href="#i-down"></use></svg></a>
+        </div>
+        <aside class="hero-updates" aria-label="最新の更新履歴">
+          <div class="updates-top"><span class="eyebrow">INFORMATION</span><span class="tiny-chip">SITE LOG</span></div>
+          <h2>更新履歴<span class="aside-dot">.</span></h2>
+          <div class="update-latest"><time datetime="2026-11-12">2026.11.12</time><span class="update-badge">INITIAL DRAFT</span><strong>EMS公式ポータル 初版制作</strong><p>組織紹介・基本方針・隊務規定を掲載しました。</p></div>
+          <a class="more-link" href="#updates">更新履歴を見る <svg class="icon-stroke"><use href="#i-arrow"></use></svg></a>
+          <div class="aside-divider"></div><p class="aside-caption">COMMUNITY / CARE / CONNECTION</p>
+        </aside>
+      </div>
+      <div class="hero-bottom container"><span>01 / NOVILL EMS</span><a href="#about" aria-label="EMSとはまでスクロール"><span>SCROLL TO EXPLORE</span><svg class="icon-stroke"><use href="#i-down"></use></svg></a></div>
+    </section>
+
+    <section id="about" class="content-section about-section" aria-labelledby="aboutTitle">
+      <div class="container section-frame">
+        <div class="section-index reveal"><span>01</span><span>WHO WE ARE</span></div>
+        <div class="about-layout">
+          <div class="about-head reveal"><span class="section-eyebrow">OUR IDENTITY</span><h2 id="aboutTitle">EMS<span class="accent-dash">とは。</span></h2><p class="about-lead">街の安心を、<br>当たり前の日常へ。</p><div class="orb-graphic" aria-hidden="true"><div class="orb-ring"></div><span>EMS</span><svg viewBox="0 0 240 80"><path d="M0 42h60l15-13 14 30 18-51 20 62 17-28h96"/></svg></div></div>
+          <div class="reading about-copy reveal">
+            <p><strong>NOVILL TOWN EMS（Emergency Medical Services）</strong> は、街で発生する事故や負傷、緊急事態に対応し、救助・搬送・蘇生・治療を担う医療組織です。</p>
+            <p>私たちの使命は、街に暮らす人々の命と健康を守り、誰もが安心して日々を過ごせる環境を支えることです。</p>
+            <p>事故や事件の現場から日常の小さな怪我まで、あらゆる患者に寄り添い、迅速かつ公平な医療を提供します。</p>
+            <p>また、私たちは医療技術だけでなく、人と人とのつながりを大切にしています。</p>
+            <p>経験の有無にかかわらず、誰もが挑戦でき、互いに学び、支え合える場所。</p>
+            <p>困ったときに頼ることができ、いつでも帰ってこられる家のような場所。</p>
+            <blockquote>すべての隊員と患者が、<br>笑顔で安心して過ごせること。</blockquote>
+            <p>それが、NOVILL TOWN EMSの目指す姿です。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="principles" class="content-section principles-section" aria-labelledby="principlesTitle">
+      <div class="container section-frame">
+        <div class="section-index reveal"><span>02</span><span>OUR PRINCIPLES</span></div>
+        <div class="section-heading reveal"><div><span class="section-eyebrow">WHAT WE BELIEVE</span><h2 id="principlesTitle">基本方針<span class="punct">。</span></h2></div><p>私たちが守り続ける、<br>4つの約束。</p></div>
+        <div class="principle-grid">
+          <article class="principle-card reveal"><span class="card-num">01 <span>/ FAIRNESS</span></span><div class="card-glyph"><svg class="icon-stroke"><use href="#i-bandage"></use></svg></div><h3>すべての人に<br>公平な医療を</h3><p class="reading">職業、所属、立場、過去の行いにかかわらず、すべての患者に対して公平な医療を提供します。</p></article>
+          <article class="principle-card reveal"><span class="card-num">02 <span>/ EMPATHY</span></span><div class="card-glyph"><svg class="icon-stroke"><use href="#i-stethoscope"></use></svg></div><h3>患者に寄り添う<br>医療を</h3><p class="reading">命を救うことだけが医療ではありません。患者一人ひとりの状況や気持ちを尊重し、安心して治療を受けられる環境を大切にします。</p></article>
+          <article class="principle-card reveal"><span class="card-num">03 <span>/ TEAMWORK</span></span><div class="card-glyph"><svg class="icon-stroke"><use href="#i-cold"></use></svg></div><h3>隊員が安心して<br>働ける組織を</h3><p class="reading">経験や階級にかかわらず、互いを尊重し、助け合える組織を目指します。失敗を責めるのではなく、学びと成長につなげることを大切にします。</p></article>
+          <article class="principle-card reveal"><span class="card-num">04 <span>/ COMMUNITY</span></span><div class="card-glyph"><svg class="icon-stroke"><use href="#i-defib"></use></svg></div><h3>街の日常を<br>支える存在に</h3><p class="reading">私たちは、医療を通じて街の暮らしを支える存在です。他の組織や市民の活動を尊重し、必要なときに頼れる医療機関であり続けます。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="mindset" class="content-section mindset-section" aria-labelledby="mindsetTitle">
+      <div class="container section-frame">
+        <div class="section-index reveal"><span>03</span><span>OUR MINDSET</span></div>
+        <div class="section-heading reveal"><div><span class="section-eyebrow">THE WAY WE CARE</span><h2 id="mindsetTitle">心構え<span class="punct">。</span></h2></div><p>規則だけでは伝わらない、<br>日々の医療で大切にしたい姿勢。</p></div>
+        <div class="mindset-layout">
+          <div class="mindset-quote reveal"><span class="quote-symbol">“</span><p>最初に向き合うのは、<br><em>怪我</em>だけでなく<br><em>その人自身</em>。</p><span class="quote-line"></span><small>NOVILL TOWN EMS / CODE OF CARE</small></div>
+          <div class="mindset-list">
+            <article class="mindset-item reveal"><span>01</span><div><h3>まずは声をかけ、耳を傾ける</h3><p class="reading">患者の訴えや不安を受け止め、必要な説明を行いながら対応しましょう。</p></div></article>
+            <article class="mindset-item reveal"><span>02</span><div><h3>一人で抱え込まない</h3><p class="reading">迷ったときは仲間に相談し、役割を分担しましょう。助け合うことも技術の一つです。</p></div></article>
+            <article class="mindset-item reveal"><span>03</span><div><h3>現場の安全を見失わない</h3><p class="reading">救助者自身の安全を守ることが、継続して医療を届けることにつながります。</p></div></article>
+            <article class="mindset-item reveal"><span>04</span><div><h3>経験の差を壁にしない</h3><p class="reading">教える側も学ぶ側も互いを尊重し、失敗を次の成長につなげましょう。</p></div></article>
+            <article class="mindset-item reveal"><span>05</span><div><h3>日常の時間も大切にする</h3><p class="reading">診療が落ち着いた時間も、交流や準備を通じて居心地のよい病院を育てましょう。</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="prohibited" class="content-section prohibited-section" aria-labelledby="prohibitedTitle">
+      <div class="container section-frame">
+        <div class="section-index reveal"><span>04</span><span>BOUNDARIES</span></div>
+        <div class="section-heading reveal"><div><span class="section-eyebrow">KEEP OUR TRUST</span><h2 id="prohibitedTitle">禁止事項<span class="punct">。</span></h2></div><p>患者・隊員・街全体の安心を守るため、<br>越えてはならない一線。</p></div>
+        <div class="prohibit-list">
+          <article class="prohibit-row reveal"><span class="prohibit-index">01</span><div><h3>職務上の立場を利用した犯罪・汚職</h3><p class="reading">職務中の犯罪行為や、医療組織の立場を利用した不当な便宜・取引を行わないこと。</p></div><span class="prohibit-mark" aria-hidden="true">×</span></article>
+          <article class="prohibit-row reveal"><span class="prohibit-index">02</span><div><h3>進行中の戦闘・犯罪シーンへの不当な介入</h3><p class="reading">警察や当事者の活動を妨げる行為、現場の安全が確認できない状態での無理な救助を行わないこと。</p></div><span class="prohibit-mark" aria-hidden="true">×</span></article>
+          <article class="prohibit-row reveal"><span class="prohibit-index">03</span><div><h3>正当な理由のない医療対応の拒否・差別</h3><p class="reading">患者の所属や個人的な関係を理由に、対応を不当に差別しないこと。</p></div><span class="prohibit-mark" aria-hidden="true">×</span></article>
+          <article class="prohibit-row reveal"><span class="prohibit-index">04</span><div><h3>対応不能な状態での無断勤務継続</h3><p class="reading">要請に応答できない状態になったときは、放置せず退勤・連絡を行うこと。</p></div><span class="prohibit-mark" aria-hidden="true">×</span></article>
+        </div>
+        <div class="note-strip reveal"><svg class="icon-stroke"><use href="#i-stethoscope"></use></svg><p>安全が確保できない現場では、無理に進入せず関係機関の状況確認を優先してください。</p></div>
+      </div>
+    </section>
+
+    <section id="rules" class="content-section rules-section" aria-labelledby="rulesTitle">
+      <div class="container section-frame">
+        <div class="section-index reveal"><span>05</span><span>OFFICIAL GUIDELINES</span></div>
+        <div class="section-heading reveal"><div><span class="section-eyebrow">OUR SHARED RESPONSIBILITY</span><h2 id="rulesTitle">隊務規定<span class="punct">。</span></h2></div><p>一人ひとりが責任を持って、<br>医療を届けるための約束。</p></div>
+        <div class="rule-intro reveal"><span class="rule-intro-label">ABOUT THIS DOCUMENT</span><p class="reading">ここに示す規則はNOVILL TOWN EMSの組織内規定です。街全体の共通ルールとは別に定められるものであり、組織内の対応は各事案の状況を踏まえて判断されます。</p></div>
+        <div class="rule-list">
+          <details class="rule-item reveal" open><summary><span class="rule-no">No. 01</span><span class="rule-main">EMSは公務員職である</span><span class="rule-plus" aria-hidden="true"></span></summary><div class="rule-body reading"><p>EMSは公的な医療を担う組織であり、勤務中だけでなく勤務外においても、組織の一員としての自覚を持って行動します。</p><p>犯罪への積極的な関与や、職務上の立場を利用した不正な取引など、信頼を損なう行為を行ってはなりません。</p></div></details>
+          <details class="rule-item reveal"><summary><span class="rule-no">No. 02</span><span class="rule-main">勤務中は緊急対応待機人員である</span><span class="rule-plus" aria-hidden="true"></span></summary><div class="rule-body reading"><p>勤務中は病院外での活動も可能ですが、EMS無線への参加と、緊急要請に応答できる状態の維持が必要です。</p><p>対応が難しくなった場合は、状況を無線で共有し、継続して対応できないときは退勤してください。</p></div></details>
+          <details class="rule-item reveal"><summary><span class="rule-no">No. 03</span><span class="rule-main">犯罪シーンには原則介入禁止である</span><span class="rule-plus" aria-hidden="true"></span></summary><div class="rule-body reading"><p>犯罪現場での救助を行う場合も、警察および当事者の行動を妨げたり、戦闘の結果に影響するような行為をしたりしてはなりません。</p><p>現場の安全が確認できない場合は、無理な進入を避け、必要に応じて警察と連携してください。問題が起きた場合は、事実を正確に報告します。</p></div></details>
+          <details class="rule-item reveal"><summary><span class="rule-no">No. 04</span><span class="rule-main">患者に対して公平な医療対応を行う</span><span class="rule-plus" aria-hidden="true"></span></summary><div class="rule-body reading"><p>EMS隊員は、患者の所属・職業・犯罪歴・個人的な関係を理由として、正当な理由なく医療対応を拒否してはなりません。</p><p>複数の救助要請が発生した場合は、緊急性や現場の安全性、対応可能な隊員数などを考慮し、適切な順序で対応します。</p></div></details>
+        </div>
+        <p class="rules-end">規則は、誰かを縛るためだけでなく、<br>誰もが安心して活動できる場所を守るためにあります。</p>
+      </div>
+    </section>
+
+    <section id="operations" class="content-section operations-section" aria-labelledby="operationsTitle">
+      <div class="container section-frame">
+        <div class="section-index reveal"><span>06</span><span>DAILY OPERATIONS</span></div>
+        <div class="section-heading reveal"><div><span class="section-eyebrow">SERVICE STANDARDS</span><h2 id="operationsTitle">勤務と装備<span class="punct">。</span></h2></div><p>迷わず動くための、<br>日々の基本を確認しましょう。</p></div>
+        <div class="operations-grid">
+          <article class="ops-card reveal"><div class="ops-card-head"><span>01 / ON DUTY</span><svg class="icon-stroke"><use href="#i-clipboard"></use></svg></div><h3>勤務・無線</h3><div class="reading"><p>勤務開始時はDutyをONにし、EMS無線に参加します。勤務中は緊急要請への応答を優先してください。</p><p>長時間の離席など、継続して対応できない場合は退勤します。短時間の一時離脱は無線で共有してください。</p></div></article>
+          <article class="ops-card reveal"><div class="ops-card-head"><span>02 / UNIFORM</span><svg class="icon-stroke"><use href="#i-bandage"></use></svg></div><h3>服装</h3><div class="reading"><p>通常の診療では、清潔感があり医療従事者と分かる装いを基本とします。白を中心に赤を差し色とし、白または水色の手袋を推奨します。</p><p>事件対応など、統一服装が指定される場面では病院の取り決めに従い、変更時は承認を受けてください。</p></div></article>
+          <article class="ops-card reveal"><div class="ops-card-head"><span>03 / VEHICLES</span><svg class="icon-stroke"><use href="#i-splint"></use></svg></div><h3>車両</h3><div class="reading"><p>勤務中はEMSが認めた車両を使用し、緊急走行や現場対応に適した装備で活動します。</p><p>対応車両の外観は赤または白を基本とし、退勤後の私用車両は原則として自由です。</p></div></article>
+        </div>
+        <div class="ops-banner reveal"><span>REMEMBER</span><strong>医療の質は、準備の質から。</strong><p>出動前の無線・装備・車両の確認を大切にしましょう。</p></div>
+      </div>
+    </section>
+
+    <section id="training" class="content-section training-section" aria-labelledby="trainingTitle">
+      <div class="container section-frame">
+        <div class="section-index reveal"><span>07</span><span>GROW TOGETHER</span></div>
+        <div class="section-heading reveal"><div><span class="section-eyebrow">JOIN THE TEAM</span><h2 id="trainingTitle">研修と成長<span class="punct">。</span></h2></div><p>初めてでも、経験があっても。<br>誰もがここから始められる。</p></div>
+        <div class="training-lead reveal"><p class="reading">NOVILL EMSは、経験の有無を問わず挑戦できる組織を目指しています。分からないことを質問できること、仲間と一緒に学べることを大切にしています。</p></div>
+        <div class="training-steps">
+          <div class="training-step reveal"><span class="step-circle">01</span><div><span class="step-kicker">ORIENTATION</span><h3>初回研修</h3><p class="reading">勤務の始め方、無線の使い方、救助と治療の基本を確認します。</p></div></div>
+          <div class="training-step reveal"><span class="step-circle">02</span><div><span class="step-kicker">FIELD PRACTICE</span><h3>現場で学ぶ</h3><p class="reading">先輩や仲間と協力し、無理のない範囲で実際の業務を経験します。</p></div></div>
+          <div class="training-step reveal"><span class="step-circle">03</span><div><span class="step-kicker">KEEP GROWING</span><h3>経験を積み重ねる</h3><p class="reading">日々の活動や学びを積み重ね、次の役割に挑戦していきます。</p></div></div>
+        </div>
+        <div class="training-note reveal"><svg class="icon-stroke"><use href="#i-cold"></use></svg><p>詳しい研修項目や昇格条件は、隊内の研修案内・運用情報に従ってください。</p></div>
+      </div>
+    </section>
+
+    <section id="updates" class="content-section updates-section" aria-labelledby="updatesTitle">
+      <div class="container section-frame">
+        <div class="section-index reveal"><span>08</span><span>CHANGELOG</span></div>
+        <div class="section-heading reveal"><div><span class="section-eyebrow">STAY INFORMED</span><h2 id="updatesTitle">更新履歴<span class="punct">。</span></h2></div><p>変更点を残すことで、<br>いつでも同じ情報にたどり着ける。</p></div>
+        <div class="history-wrap reveal"><div class="history-year">2026</div><div class="history-entry"><div class="history-date"><time datetime="2026-11-12">11.12</time><span class="history-point"></span></div><div class="history-info"><span class="history-tag">v0.1.0 / INITIAL DRAFT</span><h3>EMS公式ポータル 初版制作</h3><p class="reading">ホームページの構成、EMSの紹介、基本方針、心構え、禁止事項、隊務規定、勤務と装備、研修案内を掲載しました。</p></div></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" aria-label="公式ロゴ">
+    <div class="container">
+      <div class="footer-top"><span>UNITED BY CARE</span><p>この街の、あたりまえの安心を支える。</p></div>
+      <div class="footer-brand-grid">
+        <div class="footer-brand"><img src="assets/novill-town-mark.svg" alt="NOVILL TOWNの仮ロゴ" width="70" height="70"><div><strong>NOVILL TOWN</strong><small>THE CITY WE CALL HOME</small></div></div>
+        <div class="footer-brand"><img src="assets/novill-ems-mark.svg" alt="NOVILL EMSの仮ロゴ" width="70" height="70"><div><strong>NOVILL EMS</strong><small>EMERGENCY MEDICAL SERVICES</small></div></div>
+        <div class="footer-brand"><img src="assets/ptech-mediora-mark.svg" alt="P-Tech Medioraの仮ロゴ" width="70" height="70"><div><strong>P-Tech Mediora</strong><small>MEDICAL SYSTEM / P-TECH</small></div></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 NOVILL TOWN EMS</span><a href="#top">BACK TO TOP ↑</a><span>DOC VERSION / 0.1.3</span></div>
+    </div>
+  </footer>
+
+  <dialog class="search-dialog" id="searchDialog" aria-labelledby="searchTitle">
+    <div class="search-dialog-inner"><div class="search-dialog-head"><h2 id="searchTitle">ページ内検索</h2><button type="button" class="utility-button" id="searchClose" aria-label="検索を閉じる"><svg class="icon-stroke"><use href="#i-x"></use></svg></button></div><label for="searchInput">見たい項目やキーワードを入力</label><div class="search-field"><svg class="icon-stroke"><use href="#i-search"></use></svg><input id="searchInput" type="search" placeholder="例：服装、犯罪、研修" autocomplete="off"></div><div id="searchResults" class="search-results" aria-live="polite"></div><p class="search-hint">Esc キーで閉じることができます。</p></div>
+  </dialog>
+</body>
+</html>
