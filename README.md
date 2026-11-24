@@ -1,25 +1,39 @@
-# NOVILL TOWN EMS | GitHub Pages
+# NOVILL TOWN EMS
 
-静的サイト（HTML / CSS / JavaScript）。Novill Town EMS 公式ポータル v0.1.3 を GitHub Pages 用にまとめたものです。
+HTML / CSS / JavaScriptで構成した、EMSの組織案内・隊務規定・勤務ガイドです。外部ライブラリやビルドは不要です。
 
-## 対象リポジトリ
+- リポジトリ: https://github.com/Peridoll/NOVILL-TOWN
+- 公開URL: https://peridoll.github.io/NOVILL-TOWN/
+- バージョン: 0.2.0
+- 公開元: GitHub Pages、`main` の `/(root)`
 
-- https://github.com/Peridoll/NOVILL-TOWN
-- 想定公開URL: `https://peridoll.github.io/NOVILL-TOWN/` （公開完了後に有効）
-- GitHub Pages: デフォルトブランチ `main` の `/(root)` から公開する想定
+## 構成
 
-## 初回公開（リポジトリ管理者が実施）
+| 案内 | 内容 |
+| --- | --- |
+| EMSについて | 組織紹介・基本方針・心構えを集約 |
+| 隊務規定 | 公務員としての行動・公平な医療・事件現場の安全 |
+| 勤務・研修 | Duty・無線・服装・車両と装備・研修・階級ごとの現場対応 |
+| 更新履歴 | 最新の変更と、折りたたんだ過去の更新 |
 
-1. GitHubリポジトリの可視性を確認してください。GitHub FreeのPagesはPublicリポジトリが必要です。GitHub Pro / Team等の対象プランならPrivateでもPagesを利用可能です。ただしPages公開サイト自体は公開されます。
-2. このフォルダーの **中身**（`index.html`、`.nojekyll`、`assets/`、`README.md`）をリポジトリ最上位に配置してください。ZIPファイルをそのまま置くだけでは展開されません。
-3. Gitのブランチ・コミット・プッシュ・マージ操作はリポジトリ管理者自身が実施します。現在のリポジトリは空なので、最初にブランチを初期化してファイルを登録する必要があります。
-4. リポジトリの `Settings` → `Pages` → `Build and deployment` → Source: `Deploy from a branch` → Branch: `main`, Folder: `/(root)` → `Save`。
-5. `Settings` → `Pages` に公開URLが表示され、デプロイが完了したことを確認してください。
-6. 公開後にDiscordへURLを貼り、Medioraタブレットからの閲覧はFiveM実機で表示方式とフォント・入力操作を確認してください。
+既存のルールを保ちながら、同じ説明の重複を整理しています。勤務・無線の規定は「勤務・研修」に集約しています。新しい料金・権限・昇格条件は追加していません。
+
+## 閲覧と確認
+
+`index.html` をブラウザで開けます。JavaScriptを無効にしても本文・目次・折りたたみを利用できます。
+
+- 医療キットのメニュー、ページ内移動、ダーク / ライト、本文文字サイズを維持
+- 検索は折りたたみ内の説明も対象とし、該当項目を開いて移動
+- 旧リンク `#principles`・`#mindset`・`#prohibited`・`#training` を維持
+- CSS / JS / SVGは相対パス参照。`/NOVILL-TOWN/` のサブパスで利用可能
+- 操作設定はlocalStorageへ保存。保存できない環境でも閲覧可能
+- 動きを減らすOS設定では、スクロールアニメーションを省略
+
+変更は `feature/` ブランチで確認し、管理者がマージした後にGitHub Pagesへ反映します。
 
 ## ファイル
 
-```
+```text
 index.html
 .nojekyll
 assets/
@@ -32,19 +46,8 @@ assets/
 README.md
 ```
 
-## 特徴
+ロゴ3種は既存の仮SVGです。規定の採用状況や運用上の変更は管理者が確認してください。FiveMタブレットへの埋め込みはMediora側で別途実装・実機確認が必要です。
 
-- トップ：隊務規定への導線とスクロール型セクション
-- 医療キット式ナビゲーション：クリックで横に展開し、現在位置をハイライト
-- 目的セクションへ移動距離に応じて約1.1〜4.4秒のスクロールアニメーション
-- ダーク / ライト、本文文字サイズ、localStorage 設定保存、検索
-- スマホ / PC / FiveMタブレット幅を考慮したレイアウト
-- ロゴ3種は仮SVG。正式素材へ差し替えること
+## 今後の操作案内
 
-## 注意事項
-
-- 2026-11-13時点でサイトをGitHubへは未アップロード。Pagesの設定・公開も未実施。
-- 本ZIPは公開用の**展開素材**です。GitHubへの書き込みは利用者が行ってください。
-- このサイトの一部規定には運営シート/相談を元に整理した草案が含まれます。正式な運用ルールとして採用する前に管理者が最終確認してください。
-- GitHub PagesのプロジェクトURLは `/NOVILL-TOWN/` のサブパスを含みます。本サイトはCSS/JS/ロゴを相対パスで参照しているためこのURLに対応しています。
-- URLのページをFiveMタブレットに埋め込む処理はMediora側で別途実装・検証してください。
+EMS無線は2番です。タブレットからの無線参加・退出は対応予定のため、現行の操作手順としては掲載していません。利用できるようになった段階で実際の操作を追記します。

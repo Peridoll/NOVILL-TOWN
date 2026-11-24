@@ -63,6 +63,15 @@
   }
   setNavExpanded(false);
   kitToggle.addEventListener('click', () => setNavExpanded(!siteHeader.classList.contains('nav-open')));
+  document.addEventListener('click', event => {
+    if (!event.target.closest('.nav-assembly')) setNavExpanded(false);
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && siteHeader.classList.contains('nav-open')) {
+      setNavExpanded(false);
+      kitToggle.focus();
+    }
+  });
 
   function setActiveSection(id) {
     navLinks.forEach(link => {
@@ -133,6 +142,8 @@
   function glideToSection(id, updateHistory = true) {
     const destination = document.getElementById(id);
     if (!destination) return false;
+    // Deep links and search must reveal content inside a closed disclosure.
+    openContainingDetails(destination);
     cancelTravel();
     const token = travelToken;
     const fromY = window.scrollY || window.pageYOffset || 0;
@@ -147,6 +158,8 @@
       siteHeader.classList.remove('is-navigating');
       updateScroll();
       if (updateHistory) syncUrl(id);
+      destination.setAttribute('tabindex', '-1');
+      destination.focus({ preventScroll: true });
     }
     if (Math.abs(delta) < 2 || reducedMotion.matches) {
       done();
@@ -188,38 +201,50 @@
       const id = link.getAttribute('href').slice(1);
       if (!document.getElementById(id)) return;
       event.preventDefault();
-      if (link.dataset.section) setActiveSection(id);
+      if (link.dataset.section) {
+        setActiveSection(id);
+        if (window.matchMedia('(max-width: 900px)').matches) setNavExpanded(false);
+      }
       glideToSection(id);
     });
   });
   window.addEventListener('popstate', () => {
-    const id = decodeURIComponent(window.location.hash.slice(1));
+    const id = currentHashId();
     if (id && document.getElementById(id)) glideToSection(id, false);
   });
 
-  if ('IntersectionObserver' in window && !reducedMotion.matches) {
-    const revealObserver = new IntersectionObserver(entries => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          revealObserver.unobserve(entry.target);
-        }
-      }
-    }, { threshold:.06, rootMargin:'0px 0px -30px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-  } else {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  function currentHashId() {
+    try { return decodeURIComponent(window.location.hash.slice(1)); }
+    catch { return ''; }
   }
+  function openContainingDetails(target) {
+    for (let node = target; node; node = node.parentElement) {
+      if (node.tagName === 'DETAILS') node.open = true;
+    }
+  }
+  function revealHashTarget() {
+    const target = document.getElementById(currentHashId());
+    if (!target) return;
+    openContainingDetails(target);
+    // Deferred scripts run before the initial native fragment scroll.
+    window.requestAnimationFrame(() => {
+      target.scrollIntoView({ block: 'start', behavior: 'instant' });
+      updateScroll();
+    });
+  }
+  window.addEventListener('hashchange', revealHashTarget);
+  revealHashTarget();
 
-  // Minimal client-side section search; never requires network or a backend.
-  const indexed = sections.filter(s => s.id !== 'top').map(section => ({
-    id: section.id,
-    label: (section.querySelector('h2')?.textContent || section.id).replace(/。/g, '').trim(),
-    body: (section.innerText || section.textContent || '').replace(/\s+/g,' ').toLowerCase()
+  // Index individual topics, including collapsed explanations. textContent is
+  // intentional: innerText can exclude the body of a closed <details> element.
+  const indexed = Array.from(document.querySelectorAll('[data-search-item]')).map(item => ({
+    id: item.id,
+    label: item.dataset.searchLabel,
+    text: (item.textContent || '').replace(/\s+/g, ' ').trim()
   }));
   function search(query) {
     const term = query.trim().toLowerCase();
-    const matches = !term ? indexed : indexed.filter(entry => entry.body.includes(term) || entry.label.toLowerCase().includes(term));
+    const matches = !term ? indexed : indexed.filter(entry => entry.text.toLowerCase().includes(term) || entry.label.toLowerCase().includes(term));
     searchResults.replaceChildren();
     if (!matches.length) {
       const p = document.createElement('p');
@@ -235,7 +260,10 @@
       const title = document.createElement('strong');
       title.textContent = entry.label;
       const hint = document.createElement('small');
-      hint.textContent = '移動する →';
+      const textLower = entry.text.toLowerCase();
+      const foundAt = term ? textLower.indexOf(term) : 0;
+      const snippetStart = Math.max(0, foundAt - 20);
+      hint.textContent = `${snippetStart ? '…' : ''}${entry.text.slice(snippetStart, snippetStart + 90)}${entry.text.length > snippetStart + 90 ? '…' : ''}`;
       anchor.append(title, hint);
       anchor.addEventListener('click', event => {
         if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -260,3 +288,4 @@
     searchButton.hidden = true;
   }
 })();
+
